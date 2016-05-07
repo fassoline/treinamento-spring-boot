@@ -25,6 +25,10 @@ Espera-se que você tenha um conhecimento básico de Java, Orientação a Objeto
 	* Eclipse [Download](http://www.eclipse.org/)
 	* IntelliJ [Download](https://www.jetbrains.com/idea/)
 	* Netbeans [Download](https://netbeans.org/) 
+* Lombok [Site](https://projectlombok.org/)
+	*  Eclipse: Execute o jar do lombok e siga as instruções
+	*  IntelliJ: Pesquise no repositório de plugins por lombok
+	*  Netbeans: Já tem o lombok por padrão
 
 
 # Executando o projeto	
