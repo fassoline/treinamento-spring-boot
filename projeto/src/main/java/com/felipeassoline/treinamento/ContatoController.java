@@ -32,6 +32,7 @@ public class ContatoController {
 	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
 	public Contato delete(@PathVariable Integer id) {
 		Contato contato = contatoRepository.findOne(id);
+		assertNotNullContato(contato);
 		contatoRepository.delete(contato);
 		return contato;
 	}
@@ -41,14 +42,22 @@ public class ContatoController {
 		return contatoRepository.findAll();
 	}
 
-	@RequestMapping(value = "/{nome}", method = RequestMethod.GET)
-	public List<Contato> getByNome(@PathVariable String nome) {
+	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
+	public Contato getOne(@PathVariable Integer id) {
+		Contato contato = contatoRepository.findOne(id);
+		assertNotNullContato(contato);
+		return contato;
+	}
+
+	@RequestMapping(value = "/por-nome", method = RequestMethod.GET)
+	public List<Contato> getByNome(String nome) {
 		return contatoRepository.findByNome(nome);
 	}
 
-	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
-	public Contato getOne(@PathVariable Integer id) {
-		return contatoRepository.findOne(id);
+	private void assertNotNullContato(Contato contato) {
+		if (contato == null) {
+			throw new ContatoNaoExisteException();
+		}
 	}
 
 }

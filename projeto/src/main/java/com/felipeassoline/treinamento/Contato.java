@@ -27,9 +27,6 @@ public class Contato {
 	@Size(max = 100)
 	private String email;
 
-	// @ManyToOne
-	// private Grupo grupo;
-
 	public Contato() {
 
 	}
@@ -38,11 +35,5 @@ public class Contato {
 		this.nome = nome;
 		this.email = email;
 	}
-
-	// public Contato(String nome, String email, Grupo grupo) {
-	// this.nome = nome;
-	// this.email = email;
-	// this.grupo = grupo;
-	// }
 
 }
